@@ -189,7 +189,7 @@ void user_init(void)
     spi_bus_init (SPI_BUS, SPI_SCK_GPIO, SPI_MISO_GPIO, SPI_MOSI_GPIO);
 
     // init the sensor connected to SPI_BUS with SPI_CS_GPIO as chip select.
-    sensor = lis3mdl_init_sensor (SPI_BUS, 0, SPI_CS_GPIO);
+    sensor = lis3mdl_init_sensor (SPI_BUS, 0, SPI_CS_GPIO, true);
     
     #else
 
@@ -197,7 +197,7 @@ void user_init(void)
     i2c_init (I2C_BUS, I2C_SCL_PIN, I2C_SDA_PIN, I2C_FREQ);
     
     // init the sensor with slave address LIS3MDL_I2C_ADDRESS_2 connected to I2C_BUS.
-    sensor = lis3mdl_init_sensor (I2C_BUS, LIS3MDL_I2C_ADDRESS_2, 0);
+    sensor = lis3mdl_init_sensor (I2C_BUS, LIS3MDL_I2C_ADDRESS_2, 0, true);
 
     #endif
     
