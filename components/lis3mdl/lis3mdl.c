@@ -195,7 +195,7 @@ static bool    lis3mdl_spi_write   (lis3mdl_sensor_t* dev, uint8_t reg, uint8_t 
                 return false; \
         }
 
-lis3mdl_sensor_t* lis3mdl_init_sensor (uint8_t bus, uint8_t addr, uint8_t cs)
+lis3mdl_sensor_t* lis3mdl_init_sensor (uint8_t bus, uint8_t addr, uint8_t cs, bool reset)
 {
     lis3mdl_sensor_t* dev;
 
@@ -226,8 +226,8 @@ lis3mdl_sensor_t* lis3mdl_init_sensor (uint8_t bus, uint8_t addr, uint8_t cs)
         return NULL;
     }
 
-    // reset the sensor
-    if (!lis3mdl_reset(dev))
+    // Reset the sensor only if reset flag is true
+    if (reset && !lis3mdl_reset(dev))
     {
         error_dev ("Could not reset the sensor device.", __FUNCTION__, dev);
         free (dev);

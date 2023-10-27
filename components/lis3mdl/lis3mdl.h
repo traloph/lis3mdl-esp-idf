@@ -88,15 +88,16 @@ extern "C"
 /**
  * @brief   Initialize the sensor
  *
- * Reset the sensor and switch to power down mode. All registers are reset to 
- * default values.
+ * Depending on the reset parameter, either reset the sensor and switch to power down mode or 
+ * simply initialize without resetting. If reset, all registers are reset to default values.
  *
  * @param   bus     I2C or SPI bus at which LIS3MDL sensor is connected
  * @param   addr    I2C addr of the LIS3MDL sensor, 0 for using SPI
  * @param   cs      SPI CS GPIO, ignored for I2C
+ * @param   reset   Boolean flag to determine whether to reset the sensor during initialization
  * @return          pointer to sensor data structure, or NULL on error
  */
-lis3mdl_sensor_t* lis3mdl_init_sensor (uint8_t bus, uint8_t addr, uint8_t cs);
+lis3mdl_sensor_t* lis3mdl_init_sensor (uint8_t bus, uint8_t addr, uint8_t cs, bool reset);
 
 
 /**
