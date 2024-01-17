@@ -1,6 +1,10 @@
 # Driver for the LIS3MDL 3-axes digital output magnetometer
 
-The excellent Driver (https://github.com/gschorcht/lis3mdl-esp-idf) adapted to work with the current esp-idf (remaining code & folder structure untouched, checkout branch update_idf_compatibility). Additional modification enables to keep the registers untouched in between deep-sleeps (have a look at the branch: feature/init-without-resetting-lis3mdl-registers). Folder structure modified in current master to make it usabel as component submodule.
+*The excellent Driver (https://github.com/gschorcht/lis3mdl-esp-idf) adapted to work with the current esp-idf (remaining code & folder structure untouched, checkout branch update_idf_compatibility). 
+
+Additional modification enables to keep the registers untouched in between deep-sleeps (have a look at the branch: feature/init-without-resetting-lis3mdl-registers). 
+
+Folder structure modified in current master to make it usable as component submodule.*
 
 
 ## About the sensor
