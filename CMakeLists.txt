@@ -1,5 +1,6 @@
-cmake_minimum_required(VERSION 3.5)
-
-include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(lis3mdl)
+idf_component_register(
+    SRCS "esp8266_wrapper.c" "lis3mdl.c"
+    INCLUDE_DIRS "."
+    REQUIRES driver
+)
 
